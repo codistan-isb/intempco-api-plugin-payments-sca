@@ -1,0 +1,120 @@
+{
+  "_from": "@reactioncommerce/api-plugin-payments-stripe-sca@1.0.2",
+  "_id": "@reactioncommerce/api-plugin-payments-stripe-sca@1.0.2",
+  "_inBundle": false,
+  "_integrity": "sha512-2TzsjgsaKqCBsUJi2iATtPL8ASgcOC9xExLBp3cpwoD9zOrapixBs+4+RN1MeY46C5z0caCuEqGsBNO4YjYzuw==",
+  "_location": "/@reactioncommerce/api-plugin-payments-stripe-sca",
+  "_phantomChildren": {
+    "@types/node": "20.9.2",
+    "json-stringify-safe": "5.0.1",
+    "propagate": "2.0.1",
+    "side-channel": "1.0.4"
+  },
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@reactioncommerce/api-plugin-payments-stripe-sca@1.0.2",
+    "name": "@reactioncommerce/api-plugin-payments-stripe-sca",
+    "escapedName": "@reactioncommerce%2fapi-plugin-payments-stripe-sca",
+    "scope": "@reactioncommerce",
+    "rawSpec": "1.0.2",
+    "saveSpec": null,
+    "fetchSpec": "1.0.2"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@reactioncommerce/api-plugin-payments-stripe-sca/-/api-plugin-payments-stripe-sca-1.0.2.tgz",
+  "_shasum": "254b40d93060d61031faa007114fa50f7adb14a6",
+  "_spec": "@reactioncommerce/api-plugin-payments-stripe-sca@1.0.2",
+  "_where": "/home/awahab1116/check-intempco/reaction-cli",
+  "author": {
+    "name": "Mailchimp Open Commerce",
+    "email": "hello-open-commerce@mailchimp.com",
+    "url": "https://mailchimp.com/developer/open-commerce/"
+  },
+  "bugs": {
+    "url": "https://github.com/reactioncommerce/api-plugin-payments-stripe-sca/issues"
+  },
+  "bundleDependencies": false,
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "dependencies": {
+    "@reactioncommerce/api-utils": "^1.16.5",
+    "@reactioncommerce/logger": "^1.1.3",
+    "@reactioncommerce/random": "^1.0.2",
+    "@reactioncommerce/reaction-error": "^1.0.1",
+    "envalid": "^6.0.1",
+    "nock": "^13.1.0",
+    "stripe": "^8.155.0"
+  },
+  "deprecated": false,
+  "description": "Stripe SCA Payments plugin for the Reaction API",
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@reactioncommerce/babel-remove-es-create-require": "~1.0.0",
+    "@reactioncommerce/data-factory": "~1.0.1",
+    "@reactioncommerce/eslint-config": "~2.1.0",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "~25.1.0",
+    "babel-plugin-rewire-exports": "^2.0.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-plugin-transform-import-meta": "~1.0.0",
+    "eslint": "^6.4.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.7.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
+    "husky": "^4.2.3",
+    "jest": "^25.1.0",
+    "semantic-release": "^17.0.4"
+  },
+  "email": "hello-open-commerce@mailchimp.com",
+  "engines": {
+    "node": ">=12.14.1"
+  },
+  "homepage": "https://github.com/reactioncommerce/api-plugin-payments-stripe-sca",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "name": "@reactioncommerce/api-plugin-payments-stripe-sca",
+  "prettier": {
+    "arrowParens": "always"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "release": {
+    "branches": [
+      "trunk"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reactioncommerce/api-plugin-payments-stripe-sca.git"
+  },
+  "scripts": {
+    "lint": "npm run lint:eslint",
+    "lint:eslint": "eslint .",
+    "test": "jest --passWithNoTests",
+    "test:file": "jest --no-cache --watch --coverage=false",
+    "test:watch": "jest --watch"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "url": "https://github.com/reactioncommerce/api-plugin-payments-stripe-sca",
+  "version": "1.0.2"
+}
