@@ -1,6 +1,6 @@
 import ReactionError from "@reactioncommerce/reaction-error";
 import hashToken from "@reactioncommerce/api-utils/hashToken.js";
-import xformCartCheckout from "@reactioncommerce/api-plugin-carts/src/xforms/xformCartCheckout.js";
+import xformCartCheckout from "@reactioncommerce/intempco-api-plugin-carts/src/xforms/xformCartCheckout.js";
 import getStripeInstance from "../util/getStripeInstance.js";
 
 /**
@@ -53,8 +53,8 @@ export default async function createStripePaymentIntent(
       /* eslint-disable camelcase */
       capture_method: "manual",
       metadata: {
-        integration_check: "accept_a_payment"
-      } /* eslint-disable camelcase */
+        integration_check: "accept_a_payment",
+      } /* eslint-disable camelcase */,
     });
 
     return paymentIntent.client_secret;
