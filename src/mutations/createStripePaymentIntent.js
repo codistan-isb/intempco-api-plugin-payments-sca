@@ -22,6 +22,9 @@ export default async function createStripePaymentIntent(
   }
 
   const selector = { _id: cartId };
+
+  console.log("SELECTOR", selector);
+
   if (cartToken) {
     selector.anonymousAccessToken = hashToken(cartToken);
   } else if (accountId) {
@@ -35,13 +38,25 @@ export default async function createStripePaymentIntent(
 
   const cart = await Cart.findOne(selector);
 
+  if (!cart) {
+    throw new ReactionError("not-found", "Cart not found");
+  }
+
   const checkoutInfo = await xformCartCheckout(collections, cart);
 
   const totalAmount = Math.round(checkoutInfo.summary.total.amount * 100);
 
+
   const shop = await context.queries.shopById(context, shopId);
 
+  if (!shop) {
+    throw new ReactionError("not-found", "Shop not found");
+  }
+
+
   const stripe = await getStripeInstance(context);
+
+
 
   try {
     const paymentIntent = await stripe.paymentIntents.create({
@@ -56,6 +71,8 @@ export default async function createStripePaymentIntent(
         integration_check: "accept_a_payment",
       } /* eslint-disable camelcase */,
     });
+
+    console.log("PAYMENT", paymentIntent);
 
     return paymentIntent.client_secret;
   } catch (error) {

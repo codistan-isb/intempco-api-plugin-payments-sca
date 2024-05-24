@@ -14,6 +14,8 @@ import stripeListRefunds from "./util/stripeListRefunds.js";
  * @param {ReactionAPI} app The ReactionAPI instance
  * @returns {undefined}
  */
+
+console.log("SCA PAYMENTS METHOD");
 export default async function register(app) {
   console.log("Stripe Sca Payment plugin");
   await app.registerPlugin({

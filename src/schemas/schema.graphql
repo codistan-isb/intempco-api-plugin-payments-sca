@@ -25,6 +25,10 @@ input CreateStripePaymentIntentInput {
 
   "If this cart is anonymous, provide the `token` that was returned in the `CreateCartPayload`"
   cartToken: String
+
+  # cardNumber: String
+  # expiryDate: Date
+  # cvcNumber: String
 }
 
 "The response from the `createStripePaymentIntent` mutation"
