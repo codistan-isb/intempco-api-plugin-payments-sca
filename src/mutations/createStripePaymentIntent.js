@@ -57,7 +57,7 @@ export default async function createStripePaymentIntent(
       } /* eslint-disable camelcase */,
     });
     console.log("paymentIntentData", paymentIntent)
-    return paymentIntent.id;
+    return paymentIntent.client_secret;
   } catch (error) {
     throw new ReactionError("invalid-payment", error.message);
   }
