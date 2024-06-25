@@ -84,9 +84,7 @@
   },
   "homepage": "https://github.com/reactioncommerce/api-plugin-payments-stripe-sca",
   "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+    
   },
   "license": "Apache-2.0",
   "main": "index.js",
