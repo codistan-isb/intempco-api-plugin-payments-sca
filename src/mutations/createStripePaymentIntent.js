@@ -35,20 +35,23 @@ export default async function createStripePaymentIntent(
 
   const cart = await Cart.findOne(selector);
 
-  console.log("Cart Item", cart)
+  console.log("Cart Item", cart);
   let checkoutInfo, totalAmount = 0;
-  // const checkoutInfo = await xformCartCheckout(collections, cart);
+
+
 
   // const totalAmount = Math.round(checkoutInfo.summary.total.amount * 100);
-  if(!cart?.rfqId) {
+  if (!cart?.rfqId) {
     checkoutInfo = await xformCartCheckout(collections, cart);
 
-    totalAmount = Math.round(checkoutInfo.summary.total * 100)
+
+    totalAmount = Math.round(checkoutInfo.summary.total.amount * 100);
+
   } else {
-    totalAmount = Math.round(cart?.items?.[0]?.price?.amount * 100) ?? 0
+    totalAmount = Math.round(cart?.items?.[0]?.price?.amount * 100) ?? 0;
   }
 
-  console.log("totalAmount", totalAmount)
+  console.log("totalAmount", totalAmount);
 
   const shop = await context.queries.shopById(context, shopId);
 
@@ -67,10 +70,10 @@ export default async function createStripePaymentIntent(
         integration_check: "accept_a_payment",
       } /* eslint-disable camelcase */,
     });
-    console.log("paymentIntentData", paymentIntent)
+    console.log("paymentIntentData", paymentIntent);
     return paymentIntent.client_secret;
   } catch (error) {
-    console.log("Error", error)
+    console.log("Error", error);
     throw new ReactionError("invalid-payment", error.message);
   }
 }
